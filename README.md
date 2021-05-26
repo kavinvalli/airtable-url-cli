@@ -1,5 +1,5 @@
 # Airtable URL CLI 
-Created by @dotangad and modified by me
+Created by [@dotangad](https://github.com/dotangad) and modified by me
 
 ## Setup
 1. Clone
