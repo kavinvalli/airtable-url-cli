@@ -1,4 +1,4 @@
-# Airtable URL CLI
+# Airtable URL CLI - Created by @dotangad and modified by me
 
 ## Setup
 1. Clone
