@@ -1,0 +1,15 @@
+{
+  "name": "url",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "airtable-plus": "^1.0.4"
+  },
+  "bin": {
+    "url": "./index.js"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0"
+  }
+}
