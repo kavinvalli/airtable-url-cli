@@ -13,9 +13,12 @@ cd airtable-url-cli
 npm install
 ```
 
-3. Setup env
-```sh
-cp .env.example .env && nvim .env
+3. Add the following to your env vars
+```
+AIRTABLE_API_KEY=
+AIRTABLE_BASE_ID=
+AIRTABLE_TABLE_NAME=
+MAIN_DOMAIN=
 ```
 
 4. Global Install CLI

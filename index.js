@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 //const path = require('path')
 const crypto = require("crypto");
-require("dotenv").config();
+//require("dotenv").config();
 const Airtable = require("airtable-plus");
 
 const {
@@ -22,6 +22,15 @@ const listItems = (readRes) => {
   });
 };
 
+const renderHelpCommands = () => {
+  console.log(`
+  Usage:\n
+  -a <target> <slug>                      Add a ShortLink
+  -l                                      List all ShortLinks
+  -f <target>                             Find ShortLink based on target
+  `);
+};
+
 if (type === "-l") {
   airtable.read().then((readRes) => {
     listItems(readRes);
@@ -34,6 +43,10 @@ if (type === "-l") {
     })
     .catch((e) => console.error(e));
 } else if (type === "-f") {
+  if (!target) {
+    renderHelpCommands();
+    return;
+  }
   airtable
     .read({
       //filterByFormula: `slug = "${target}"`,
@@ -43,10 +56,5 @@ if (type === "-l") {
       listItems(readRes);
     });
 } else {
-  console.log(`
-  Usage:\n
-  -a <target> <slug>                      Add a ShortLink
-  -l                                      List all ShortLinks
-  -f <target>                             Find ShortLink based on target
-  `);
+  renderHelpCommands();
 }

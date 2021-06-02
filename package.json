@@ -8,8 +8,5 @@
   },
   "bin": {
     "url": "./index.js"
-  },
-  "devDependencies": {
-    "dotenv": "^10.0.0"
   }
 }
