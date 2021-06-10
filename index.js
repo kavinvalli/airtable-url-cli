@@ -26,6 +26,7 @@ const renderHelpCommands = () => {
   console.log(`
   Usage:\n
   -a <target> <slug>                      Add a ShortLink
+  -u <target> <slug>                      Update record with slug
   -l                                      List all ShortLinks
   -f <target>                             Find ShortLink based on target
   `);
@@ -41,6 +42,13 @@ if (type === "-l") {
     .then(() => {
       console.log(`Created ${MAIN_DOMAIN}/${slug}`);
     })
+    .catch((e) => console.error(e));
+} else if (type === "-u") {
+  airtable
+    .updateWhere(`slug = "${slug}"`, {
+      target,
+    })
+    .then(() => console.log(`Updated ${MAIN_DOMAIN}/${slug}`))
     .catch((e) => console.error(e));
 } else if (type === "-f") {
   if (!target) {
